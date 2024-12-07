@@ -8,6 +8,7 @@ import { HeaderTop } from "./headerTop/HeaderTop";
 import { ReactComponent as LogoSVG } from "../../assets/icons/logo.svg";
 import { useResize } from "../../hooks/useRessize";
 import { HeaderSocial } from "./headerSocial/HeaderSocial";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   const [isOpenPayForm, toggleIsOpenPayForm] = useState(false);
@@ -20,7 +21,13 @@ export const Header = () => {
             <HeaderTop />
 
             <div className={cls.header__bottom}>
-              {resize560 ? <LogoSVG /> : <HeaderSocial />}
+              {resize560 ? (
+                <NavLink to="/">
+                  <LogoSVG />
+                </NavLink>
+              ) : (
+                <HeaderSocial />
+              )}
               <NavBar />
             </div>
           </div>

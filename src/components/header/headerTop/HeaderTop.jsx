@@ -8,6 +8,7 @@ import { ReactComponent as MailSVG } from "../../../assets/icons/mail.svg";
 import { ReactComponent as LogoSVG } from "../../../assets/icons/logo.svg";
 import { HeaderSocial } from "../headerSocial/HeaderSocial";
 import { useResize } from "../../../hooks/useRessize";
+import { NavLink } from "react-router-dom";
 
 export const HeaderTop = () => {
   const resize560 = useResize(570);
@@ -31,7 +32,9 @@ export const HeaderTop = () => {
           </div>
         </>
       ) : (
-        <LogoSVG />
+        <NavLink to="/">
+          <LogoSVG />
+        </NavLink>
       )}
     </div>
   );

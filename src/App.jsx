@@ -10,6 +10,7 @@ import { ContactsPage } from "./pages/contatsPage/ContactsPage";
 import { Modal } from "./shared/Modal/Modal";
 import { Form } from "./components/form/Form";
 import { useState } from "react";
+import { AboutPage } from "./pages/aboutPage/AboutPage";
 // import { Risk } from './pages/risk/Risk';
 // import { Oferta } from './pages/oferta/Oferta';
 // import { Parthner } from './pages/parthner/Parthner';
@@ -28,7 +29,7 @@ export const App = () => {
       {/* </Layout> */}
       <Routes>
         <Route path="/" element={<HomePage toggleIsOpenForm={toggleIsOpenForm}/>} />
-        <Route path="/about" element={<HomePage toggleIsOpenForm={toggleIsOpenForm}/>} />
+        <Route path="/about" element={<AboutPage toggleIsOpenForm={toggleIsOpenForm}/>} />
         <Route path="/buch" element={<BuchPage toggleIsOpenForm={toggleIsOpenForm}/>} />
         <Route path="/jur" element={<JurPage toggleIsOpenForm={toggleIsOpenForm}/>} />
         <Route path="/contacts" element={<ContactsPage toggleIsOpenForm={toggleIsOpenForm}/>} />
