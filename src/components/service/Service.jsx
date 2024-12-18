@@ -4,28 +4,23 @@ import { ReactComponent as SVG2 } from "../../assets/icons/service-icon2.svg";
 import { ReactComponent as SVG4 } from "../../assets/icons/service-icon3.svg";
 import { ReactComponent as SVG3 } from "../../assets/icons/service-icon4.svg";
 
+const icons = [
+  <SVG1 />,
+  <SVG2 />,
+  <SVG3 />,
+  <SVG4 />,
+]
+
 export const Service = ({ text }) => {
+
   return (
     <div className={cls.service}>
-      <div className={cls.serviceBlock}>
-        <SVG1 />
-        <p className={cls.service__text}>{text[0]}</p>
-      </div>
-      <div className={cls.serviceBlock}>
-        <SVG2 />
-
-        <p className={cls.service__text}>{text[1]}</p>
-      </div>
-      <div className={cls.serviceBlock}>
-        <SVG3 />
-
-        <p className={cls.service__text}>{text[2]}</p>
-      </div>
-      <div className={cls.serviceBlock}>
-        <SVG4 />
-
-        <p className={cls.service__text}>{text[3]}</p>
-      </div>
+      {text.map((item, i) => {
+           return <div className={cls.serviceBlock}>
+            {icons[i]}
+            <p className={cls.service__text}>{item}</p>
+          </div>
+      })}
     </div>
   );
 };

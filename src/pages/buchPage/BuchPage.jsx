@@ -5,6 +5,8 @@ import cls from "./BuchPage.module.scss";
 import homeImg from "../../assets/img/buch-img.svg";
 import { Service } from "../../components/service/Service";
 import { Usluga } from "../../components/usluga/Usluga";
+import { BuchServices } from "../../components/buchServices/BuchServices";
+import { HowWork } from "../../components/howWork/HowWork";
 
 export const BuchPage = ({ toggleIsOpenForm }) => {
   return (
@@ -33,45 +35,8 @@ export const BuchPage = ({ toggleIsOpenForm }) => {
               ]}
             />
           </div>
-          <div className={cls.BuchPage__service}>
-            <Usluga
-              title="Аутсорсинг бухгалтерии"
-              description="Нужен надежный подрядчик на аутсорсинг бухгалтерии? Вы его нашли!"
-              price={6500}
-              buttonText="Заказать"
-              onOrderClick={() => {toggleIsOpenForm(true)}}
-            />
-            <Usluga
-              title="Бухгалтерские услуги для ООО"
-              description="Бухгалтерские услуги для ООО. Любая деятельность, возьмем бухучет на себя."
-              price={6500}
-              buttonText="Заказать"
-              onOrderClick={() => {toggleIsOpenForm(true)}}
-            />
-            <Usluga
-              title="Бухгалтерские услуги для ИП"
-              description="Маленький бизнес — большая ответственность. Заберем на себя бухгалтерскую ее часть."
-              features={[
-                'Сведем к минимуму риск блокировки р/с',
-                'Ответим на все ваши вопросы',
-                'Отчеты будут сдаваться вовремя — вам не нужно будет за этим следить'
-              ]}
-              price={6500}
-              buttonText="Заказать"
-              onOrderClick={() => {toggleIsOpenForm(true)}}
-              />
-            <Usluga
-              title="Возмещение НДС"
-              features={[
-                'Помогаем вернуть НДС',
-                'Рассказываем, кто может вернуть НДС и в каком случае',
-                'Помогаем на всех этапах'
-              ]}
-              price={20000}
-              buttonText="Заказать"
-              onOrderClick={() => {toggleIsOpenForm(true)}}
-            />
-          </div>
+          <BuchServices toggleIsOpenForm={toggleIsOpenForm}/>
+          <HowWork />
         </div>
       </Layout>
     </>
